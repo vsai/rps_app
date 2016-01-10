@@ -56,7 +56,7 @@ if (Meteor.isServer) {
       var winMap = {
           'rock': 'scissors',
           'paper': 'rock',
-          'scissors': 'paper
+          'scissors': 'paper'
       };
       Meteor.methods({
           updateGame: function(player, move) {
