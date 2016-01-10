@@ -9,16 +9,18 @@ if (Meteor.isClient) {
     Template.main_game.events({
         'click .rock': function() {
             Session.set('myMove', 'rock');
-            console.log(Games.find().fetch()[0]);
-            Meteor.call("updateGame", "p2", "rock");
+            var player = Session.get("player");
+            Meteor.call("updateGame", player, "rock");
         },
         'click .paper': function() {
             Session.set('myMove', 'paper');
-            Meteor.call("updateGame", "p2", "paper");
+            var player = Session.get("player");
+            Meteor.call("updateGame", player, "paper");
         },
         'click .scissors': function() {
             Session.set('myMove', 'scissors');
-            Meteor.call("updateGame", "p2", "scissors");
+            var player = Session.get("player");
+            Meteor.call("updateGame", player, "scissors");
         }
     });
     Template.main_game.helpers({
