@@ -1,15 +1,13 @@
 <head>
-  <title>Rock Paper Scissors</title>
+    <title>Rock Paper Scissors</title>
 </head>
 
 <body>
-  <h1>Welcome to RPS</h1>
-  {{#each games}}
-      {{> game_state}}
-  {{/each}}
-  {{ > main_game }}
-  <div class="container">
-  </div>
+    <h1>Welcome to RPS</h1>
+    {{#each games}}
+        {{> game_state}}
+    {{/each}}
+    {{ > main_game }}
 </body>
 
 <template name="main_game">
