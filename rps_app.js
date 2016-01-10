@@ -21,6 +21,9 @@ if (Meteor.isClient) {
             Session.set("myMove", "scissors");
             var player = Session.get("player");
             Meteor.call("updateGame", player, "scissors");
+        },
+        "click .new_game": function() {
+            Meteor.call("newGame");
         }
     });
     Template.main_game.helpers({
@@ -42,7 +45,6 @@ if (Meteor.isServer) {
             "paper": "rock",
             "scissors": "paper"
         };
-
         Meteor.methods({
             updateGame: function(player, move) {
                 var g = Games.findOne({}, {sort: {created_at: -1}});
