@@ -4,16 +4,40 @@
 
 <body>
   <h1>Welcome to RPS</h1>
+  {{#each games}}
+      {{> game_state}}
+  {{/each}}
   <div class="container">
   </div>
 </body>
 
-<template name="self_player">
-  <div>
-  </div>
+<template name="game">
+    {{> Template.dynamic template=view}}
 </template>
 
-<template name="other_player">
-  <div>
-  </div>
+<template name="game_state">
+    <h4>{{ state }}</h4>
+</template>
+<template name="p1_main">
+    <div>
+        You are: p1<br>
+        You have chosen: {{ p1_move }}<br>
+        Choose your move<br>
+        {{> game_controls}}
+    </div>
+</template>
+
+<template name="p2_main">
+    <div>
+        You are: p2
+        P2 is the main player<br>
+        You have chosen: {{ p2_move }}<br>
+        Choose your move<br>
+        {{> game_controls}}
+    </div>
+</template>
+<template name="game_controls">
+    <button class="rock">Rock</button>
+    <button class="paper">Paper</button>
+    <button class="scissors">Scissors</button>
 </template>
