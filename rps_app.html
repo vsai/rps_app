@@ -7,37 +7,22 @@
   {{#each games}}
       {{> game_state}}
   {{/each}}
+  {{ > main_game }}
   <div class="container">
   </div>
 </body>
 
-<template name="game">
-    {{> Template.dynamic template=view}}
+<template name="main_game">
+    <div>
+        You are: {{ player }}<br>
+        You have chosen: {{ myMove }}<br>
+        Choose your move<br>
+        <button class="rock">Rock</button>
+        <button class="paper">Paper</button>
+        <button class="scissors">Scissors</button>
+    </div>
 </template>
 
 <template name="game_state">
     <h4>{{ state }}</h4>
-</template>
-<template name="p1_main">
-    <div>
-        You are: p1<br>
-        You have chosen: {{ myMove }}<br>
-        Choose your move<br>
-        {{> game_controls}}
-    </div>
-</template>
-
-<template name="p2_main">
-    <div>
-        You are: p2
-        P2 is the main player<br>
-        You have chosen: {{ myMove }}<br>
-        Choose your move<br>
-        {{> game_controls}}
-    </div>
-</template>
-<template name="game_controls">
-    <button class="rock">Rock</button>
-    <button class="paper">Paper</button>
-    <button class="scissors">Scissors</button>
 </template>

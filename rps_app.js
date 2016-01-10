@@ -6,26 +6,7 @@ if (Meteor.isClient) {
             return Games.find({});
         }
     });
-    Template.p1_main.events({
-        'click .rock': function() {
-            Session.set('myMove', 'rock');
-            console.log(Games.find().fetch()[0]);
-            Meteor.call("updateGame", "p1", "rock");
-        },
-        'click .paper': function() {
-            Session.set('myMove', 'paper');
-            Meteor.call("updateGame", "p1", "paper");
-        },
-        'click .scissors': function() {
-            Session.set('myMove', 'scissors');
-            Meteor.call("updateGame", "p1", "scissors");
-        }
-    });
-    Template.p1_main.helpers({
-        myMove: function() { return Session.get('myMove');}
-    });
-
-    Template.p2_main.events({
+    Template.main_game.events({
         'click .rock': function() {
             Session.set('myMove', 'rock');
             console.log(Games.find().fetch()[0]);
@@ -40,8 +21,9 @@ if (Meteor.isClient) {
             Meteor.call("updateGame", "p2", "scissors");
         }
     });
-    Template.p2_main.helpers({
+    Template.main_game.helpers({
         myMove: function() { return Session.get('myMove');},
+        player: function() { return Session.get("player");}
     });
 }
 

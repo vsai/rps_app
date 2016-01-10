@@ -10,7 +10,6 @@ FlowRouter.route("/player1", {
     action: function(params) {
         console.log("Player 1 entered the game");
         Session.set("player", "p1");
-        BlazeLayout.render('game', { view: "p1_main"});
     }
 });
 
@@ -19,6 +18,5 @@ FlowRouter.route("/player2", {
     action: function(params) {
         console.log("Player 2 entered the game");
         Session.set("player", "p2");
-        BlazeLayout.render('game', { view: "p2_main"});
     }
 });
