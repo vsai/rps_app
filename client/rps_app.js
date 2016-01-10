@@ -1,7 +1,7 @@
 Meteor.subscribe("currentGame");
 Template.body.helpers({
-    games: function() {
-        return Games.find({});
+    state: function() {
+        return Games.findOne({}).state;
     }
 });
 Template.main_game.events({

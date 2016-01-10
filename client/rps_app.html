@@ -4,9 +4,7 @@
 
 <body>
     <h1>Welcome to RPS</h1>
-    {{#each games}}
-        {{> game_state}}
-    {{/each}}
+    <h4>Game state: {{ state }}</h4>
     {{ > main_game }}
 </body>
 
