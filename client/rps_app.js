@@ -20,7 +20,7 @@ Template.main_game.events({
         var player = Session.get("player");
         Meteor.call("updateGame", player, "scissors");
     },
-    "click .new_game": function() {
+    "click #new_game": function() {
         Meteor.call("newGame");
     }
 });
