@@ -5,17 +5,17 @@ Template.body.helpers({
     }
 });
 Template.main_game.events({
-    "click .rock": function() {
+    "click #rock": function() {
         Session.set("myMove", "rock");
         var player = Session.get("player");
         Meteor.call("updateGame", player, "rock");
     },
-    "click .paper": function() {
+    "click #paper": function() {
         Session.set("myMove", "paper");
         var player = Session.get("player");
         Meteor.call("updateGame", player, "paper");
     },
-    "click .scissors": function() {
+    "click #scissors": function() {
         Session.set("myMove", "scissors");
         var player = Session.get("player");
         Meteor.call("updateGame", player, "scissors");
