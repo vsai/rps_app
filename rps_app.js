@@ -8,40 +8,40 @@ if (Meteor.isClient) {
     });
     Template.p1_main.events({
         'click .rock': function() {
-            Session.set('p1_move', 'rock');
+            Session.set('myMove', 'rock');
             console.log(Games.find().fetch()[0]);
             Meteor.call("updateGame", "p1", "rock");
         },
         'click .paper': function() {
-            Session.set('p1_move', 'paper');
+            Session.set('myMove', 'paper');
             Meteor.call("updateGame", "p1", "paper");
         },
         'click .scissors': function() {
-            Session.set('p1_move', 'scissors');
+            Session.set('myMove', 'scissors');
             Meteor.call("updateGame", "p1", "scissors");
         }
     });
     Template.p1_main.helpers({
-        p1_move: function() { return Session.get('p1_move');}
+        myMove: function() { return Session.get('myMove');}
     });
 
     Template.p2_main.events({
         'click .rock': function() {
-            Session.set('p2_move', 'rock');
+            Session.set('myMove', 'rock');
             console.log(Games.find().fetch()[0]);
             Meteor.call("updateGame", "p2", "rock");
         },
         'click .paper': function() {
-            Session.set('p2_move', 'paper');
+            Session.set('myMove', 'paper');
             Meteor.call("updateGame", "p2", "paper");
         },
         'click .scissors': function() {
-            Session.set('p2_move', 'scissors');
+            Session.set('myMove', 'scissors');
             Meteor.call("updateGame", "p2", "scissors");
         }
     });
     Template.p2_main.helpers({
-        p2_move: function() { return Session.get('p2_move');},
+        myMove: function() { return Session.get('myMove');},
     });
 }
 
