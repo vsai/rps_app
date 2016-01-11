@@ -1,7 +1,8 @@
 Meteor.subscribe("currentGame");
 Template.body.helpers({
     state: function() {
-        return Games.findOne({}).state;
+        var g = Games.findOne({});
+        return (g !== undefined) ? g.state : "waiting";
     }
 });
 Template.main_game.events({
